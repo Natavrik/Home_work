@@ -19,6 +19,7 @@ int main ( )
  printf ("введите d: "); 
  scanf ("%lf", &d); 
   
+  
  do { 
    y=otv; 
    otv=x2-((x2-x1)/(f(x2,c,d)-f(x1,c,d)))*f(x2,c,d); 
