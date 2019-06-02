@@ -1,19 +1,19 @@
 #include <stdio.h> 
 #include <math.h> 
-#define epsilon 0.000000001
+
 double f(double, double , double ); 
 
 int main ( ) 
 { 
-double a, b, otv=0, y, c, d; 
+double a, b, otv=0, y, c, d, epsilon; 
 int k=0;
 printf ("введите интервал от a до b \n"); 
 printf ("введите a : "); 
 scanf ("%lf", &a); 
 printf ("введите b: "); 
 scanf ("%lf", &b); 
-//printf ("введите точность вычислений: "); 
-//scanf ("%lf", &epsilon);
+printf ("введите точность вычислений: "); 
+scanf ("%lf", &epsilon);
 printf ("введите с(констатнта при икс): "); 
 scanf ("%lf", &c); 
 printf ("введите значение положения функции по y : "); 
@@ -32,7 +32,8 @@ printf("%d) %lf\n\n", k, otv);
 } 
 while (fabs(y-otv)>=epsilon); 
 printf ("________________\n"); 
-// printf ("Ответ: %lf\n %d/n", otv, k); 
+printf ("    Ответ: x = %lf\n"
+        "При итерации = %d\n", otv, k); 
 return 0; 
 } 
 
@@ -40,27 +41,6 @@ double f(double x, double c, double d)
 { 
 return sin(c*x)-d; 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
