@@ -7,8 +7,6 @@
 #define DELTA 1e-2
 
 
-
-
 // прототип функции f - функция
 double f(double, double, double );
 // прототип функции root - поиск корня
@@ -17,35 +15,37 @@ double root (double, double, double, double );
 double derivative (double, double, double );
 
 
-
-
 // главная функция main ()
 int main (){
 // объявление переменных типа double
-double x; epsilon, c, d;
+double x=1, epsilon, c, d; 
 printf ("введите точность: ");
 // ввод значения epsilon
 scanf ("%lf", &epsilon);
 // ввод значения c
-printf ("Введите с (изменение графика по х ): ");
+printf ("Введите с: ");
 scanf("%lf",&c);
 // ввод значения d
 printf ("Введите d: ");
 scanf("%lf",&d);
+printf ("________________________________\n\n");
 // вывод значения, которое возвращает функция root()
-printf ("%lf\n", root (x, epsilon,c,d));
+ root (x, epsilon,c,d);
 // успешное выполнение программы
 return 0;
 }
 
 
-
 // объявление функции f - запись уравнения
 double f (double x, double c, double d) {
 //возврат значения функции
-return (pow(x,4))+(c*pow(x,3))-d*x;
+		//return pow(x,4)+c*pow(x,3)-d*x;
+		//return pow(x,5)+c*pow(x,2)-d;
+		//return sin(c*x)-d; 
+		//return c*pow(x,2)-d;
+		//return cos(c*x)-d;
+		//return sqrt(c*x)-d;
 }
-
 
 
 // объявление функции root - считает корень
@@ -65,20 +65,19 @@ x = x-(f(x,c,d)/derivative(x,c,d));
 // постинкремент
 k++;
 // вывод на экран значений k, x, f(x, c, d)
-printf("%d)x=%lf f(x)= %.10lf\n",k,x,f(x,c,d));
+printf("%d)x=%lf f(x)= %.10lf\n\n",k,x,f(x,c,d));
 }
 // пока абсолютное значение функции от аргумента х >= epsilon
 while(fabs(f(x,c,d))>=epsilon);
 }while(f(x,c,d)*f(x1,c,d)<0);
+printf ("________________________________\n\n");
+printf("\n     Ответ х = %lf\n"
+       "При итерации = %d\n",x,k );
 // возврат значения x
 return x;
 }
 
   
-
-
-
-
 // объявление функции derivative - производная
 double derivative (double x, double c, double d){
 // возврат значения derivitive
