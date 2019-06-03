@@ -43,7 +43,7 @@ return 0;
 // объявление функции f - запись уравнения
 double f (double x, double c, double d) {
 //возврат значения функции
-return sin(c*x)-d;
+return (pow(x,4))+(c*pow(x,3))-d*x;
 }
 
 
