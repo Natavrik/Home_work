@@ -60,6 +60,7 @@ return 0;
 } 
 
 
+
 // объявление функции f 
 double f(double x, double c, double d) 
 { 
