@@ -22,7 +22,7 @@ double derivative (double, double, double );
 // главная функция main ()
 int main (){
 // объявление переменных типа double
-double x=0, epsilon, c, d;
+double x; epsilon, c, d;
 printf ("введите точность: ");
 // ввод значения epsilon
 scanf ("%lf", &epsilon);
@@ -73,6 +73,8 @@ while(fabs(f(x,c,d))>=epsilon);
 // возврат значения x
 return x;
 }
+
+  
 
 
 
