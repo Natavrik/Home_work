@@ -1,11 +1,11 @@
-#include <stdio.h>
+#include <stdio.h> // подключение бибилиотек
 #include <math.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define POLZOVATEL_PROIGRAL 1
-
+#define POLZOVATEL_PROIGRAL 1 // объявление константы равной единице
+// объявление функций
 void WIN (int*, int*, int*, int*);
 void GENER (int);
 int EndGame(int,int,int,int*);
@@ -13,7 +13,7 @@ void clear(void);
 void clearStream (void);
 int game (int);
 int option();
-
+// данная функция позволяет выбрать опцию, такую как выбор первоначального счёта
 int option()
 {
 	int i;
@@ -22,9 +22,10 @@ int option()
 	return i;
 }
 
-
+// главная функция
 int main()
 {
+	//объвление переменных
 	int i,SCHIT=100,x=1;
 	do{
 		printf (" 1) Старт игры\n 2) Опции\n 3) выход\n");
@@ -47,9 +48,11 @@ int main()
 	return 0;
 }
 
+
+// функция в которой генерируется сумма выпавших костей
 int game (int SCHIT)
 {
-    int STAVKA, summa, k, r, U, SS,y=1;
+    int STAVKA, summa, k, r, U, y=1;
     while(y==1){
     {
             clear();
@@ -57,7 +60,6 @@ int game (int SCHIT)
 
     printf ("\x1b[1;33mТеперь Крупье бросит кости..\n\n\x1b[0m");
     usleep(2000000);
-  //   system("sleep 2");
     srand(time(NULL));
 
     k=rand()%6+1;
@@ -112,6 +114,8 @@ clearStream();
     return 0;
 }
 
+
+// сама функция генерации случайных чисел от 1 до 6, реализованная в виде кубиков
 void GENER (int k)
 {
     if (k==1)
@@ -171,7 +175,7 @@ void GENER (int k)
 
 
 
-
+// функция наальных действий Игрока
 void WIN (int* U , int* STAVKA, int* summa, int* SCHIT )
 {
 
@@ -199,14 +203,10 @@ void WIN (int* U , int* STAVKA, int* summa, int* SCHIT )
         }
         }
         while (*STAVKA <=0 || *STAVKA>*SCHIT);
-
-
-    
-
 }
 
 
-
+// функция с условиями выйгрыша и проигрыша
 int  EndGame(int U , int STAVKA, int summa, int *SCHIT)
 {
         if  (summa==U)
@@ -255,7 +255,7 @@ int  EndGame(int U , int STAVKA, int summa, int *SCHIT)
     }
         return 0;
 }
-
+// функция очистки некоторой части экрана, что бы не мешала предыдущая итерация действий
 void clear()
 {
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -263,7 +263,7 @@ void clear()
 }
 
 
-
+//функция против случайного ввода не того символа
 void clearStream()
 {
   int c;
